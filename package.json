@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "bun db:mig && next start",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+
+    "db:gen": "bun x --bun drizzle-kit generate",
+    "db:mig": "bun x --bun drizzle-kit migrate"
   },
   "dependencies": {
     "@better-auth/passkey": "^1.6.22",
