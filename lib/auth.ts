@@ -23,7 +23,7 @@ export const auth = betterAuth({
           clientSecret: process.env.HACKCLUB_SECRET as string,
           discoveryUrl:
             "https://auth.hackclub.com/.well-known/openid-configuration",
-          scopes: ["verification_status", "profile", "email"],
+          scopes: ["openid", "profile", "email"],
         },
       ],
     }),
