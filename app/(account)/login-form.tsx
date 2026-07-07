@@ -50,12 +50,12 @@ export function LoginForm({
           email,
           name,
           password,
-          callbackURL: "/app",
+          callbackURL: "/overview",
         })
       : await authClient.signIn.email({
           email,
           password,
-          callbackURL: "/app",
+          callbackURL: "/overview",
         })
 
     setIsPending(false)
@@ -65,7 +65,7 @@ export function LoginForm({
       return
     }
 
-    router.push("/app")
+    router.push("/overview")
     router.refresh()
   }
 
@@ -75,7 +75,7 @@ export function LoginForm({
 
     const response = await authClient.signIn.social({
       provider: "hackclub",
-      callbackURL: "/app",
+      callbackURL: "/overview",
       errorCallbackURL: isRegister ? "/register" : "/login",
     })
 
@@ -91,7 +91,7 @@ export function LoginForm({
       return
     }
 
-    router.push("/app")
+    router.push("/overview")
   }
 
   return (
@@ -149,7 +149,9 @@ export function LoginForm({
                   id="password"
                   name="password"
                   type="password"
-                  autoComplete={isRegister ? "new-password" : "current-password"}
+                  autoComplete={
+                    isRegister ? "new-password" : "current-password"
+                  }
                   minLength={8}
                   required
                 />

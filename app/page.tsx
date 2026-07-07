@@ -6,7 +6,7 @@ export default function HomePage() {
       <h1 className="text-2xl font-bold">
         Hi, this landing page is still being built
       </h1>
-      <Link href={"/app"}>Click me to visit the app</Link>
+      <Link href={"/overview"}>Click me to visit the app</Link>
     </div>
   )
 }
